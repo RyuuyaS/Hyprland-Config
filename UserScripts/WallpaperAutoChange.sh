@@ -1,5 +1,5 @@
 #!/bin/bash
-## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
+# ## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # source https://wiki.archlinux.org/title/Hyprland#Using_a_script_to_change_wallpaper_every_X_minutes
 
 # This script will randomly go through the files of a directory, setting it
@@ -9,7 +9,7 @@
 
 pywal_refresh=$HOME/.config/hypr/scripts/RefreshNoWaybar.sh
 
-if [[ $# -lt 1 ]] || [[ ! -d $1   ]]; then
+if [[ $# -lt 1 ]] || [[ ! -d $1 ]]; then
 	echo "Usage:
 	$0 <dir containing images>"
 	exit 1
@@ -23,15 +23,15 @@ export SWWW_TRANSITION_TYPE=simple
 INTERVAL=1800
 
 while true; do
-	find "$1" \
-		| while read -r img; do
+	find "$1" |
+		while read -r img; do
 			echo "$((RANDOM % 1000)):$img"
-		done \
-		| sort -n | cut -d':' -f2- \
-		| while read -r img; do
-			swww img "$img" 
+		done |
+		sort -n | cut -d':' -f2- |
+		while read -r img; do
+			swww img "$img"
 			$pywal_refresh
 			sleep $INTERVAL
-			
+
 		done
 done

@@ -1,5 +1,5 @@
 #!/bin/bash
-## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
+# ## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # For manually starting xdg-desktop-portal
 
 sleep 1
@@ -13,4 +13,3 @@ sleep 1
 sleep 2
 /usr/lib/xdg-desktop-portal-hyprland &
 /usr/libexec/xdg-desktop-portal &
-
